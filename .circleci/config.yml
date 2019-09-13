@@ -8,7 +8,9 @@ jobs:
       - image: google/cloud-sdk:latest
     working_directory: ~/workspace
     environment:
-      DEPLOYMENT_NAME: ci-cd
+      DEPLOYMENT_NAME: otladeps
+      CONTAINER_NAME: otladeps
+      DEPLOYMENT_ENVIRONMENT: beta
       PROJECT_ID: adroit-goods-251611
       CLUSTER_NAME: ml-k8s-cluster
       CLOUDSDK_COMPUTE_ZONE: europe-west3-a
