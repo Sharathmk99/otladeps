@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: otladeps
+  labels:
+    app: otladeps
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v1
+      kind:  Mapping
+      name:  otladeps_mapping
+      prefix: /beta
+      rewrite: /beta
+      timeout_ms: 10000
+      service: otladeps.default:4000
+spec:
+  ports:
+    - port: 4000
+  selector:
+    app: otladeps
+  type: ClusterIP
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: otladeps
+  labels:
+    app: otladeps
+spec:
+  selector:
+    matchLabels:
+      app: otladeps
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: otladeps
+    spec:
+      containers:
+      - image: eu.gcr.io/adroit-goods-251611/otladeps:latest
+        name: otladeps
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4000
+          name: otladeps

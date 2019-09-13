@@ -1,0 +1,31 @@
+# Ruby CircleCI 2.0 configuration file
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: wecs/circle-ci-gcloud-node:0.1.0
+    working_directory: ~/workspace
+    environment:
+      DEPLOYMENT_NAME: ci-cd
+      PROJECT_ID: adroit-goods-251611
+      CLUSTER_NAME: ml-k8s-cluster
+      CLUSTER_NAME_STAG: ci-cd-stag
+      CLOUDSDK_COMPUTE_ZONE: europe-west3-a
+      CONTAINER_NAME: otladeps
+      IMAGE: otladeps
+      REG_ID: otladeps
+      REG_ID_PROD: otladeps-prod
+      IMG_TAG: latest
+      PROJECT_NAME: otladeps
+      DEPLOYMENT_ENVIRONMENT: staging
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build and Deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ./deployment.sh
+            fi  
