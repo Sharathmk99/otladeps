@@ -1,18 +1,9 @@
-#############
-### build ###
-#############
+FROM jekyll/jekyll:stable
 
-# base image
-FROM jekyll/jekyll:stable as build
-
-RUN mkdir /workdir
-RUN chmod 0777 /workdir
-COPY . /workdir
 WORKDIR /workdir
-
+COPY . ./
 
 RUN jekyll build
-
 
 EXPOSE 4000
 
