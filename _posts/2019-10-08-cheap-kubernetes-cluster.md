@@ -21,7 +21,7 @@ To setup Kubernetes cluster we need Master VM or Control panel, minimum we need 
 
 For 3 VM's on Google Cloud Platform we need to pay around USD 15 per month and we need one load balancer to access application from Internet. The cost for Load Balancer is around USD 22 per month, which is more than 3 VM's. Total USD approx. USD 37 per month, which is expensive to learn/try Kubernetes cluster on cloud.
 
-![walking]({{ site.baseurl }}/assets/images/1-1.png)
+![GCPPrice]({{ site.baseurl }}/assets/images/1-1.PNG)
 
 
 
@@ -29,7 +29,7 @@ For 3 VM's on Google Cloud Platform we need to pay around USD 15 per month and w
 As explained above, we need 3 VM's for our cluster to up and running. We can also use only one VM to run Kubernetes cluster, but we can't guaranty that it's availability is 99.9%.
 GCP provides VM with almost half the price of normal VM which is called Preemptible. Preemptible VM's are removed every 24hours and new VM gets allocated within couple of seconds. The cost of 3 preemptible VM's is USD 9. We also don't need load balancer, i'll explain you the trick to access your application without load balancer.
 
-![walking]({{ site.baseurl }}/assets/images/1-2.png)
+![GCPPrice]({{ site.baseurl }}/assets/images/1-2.PNG)
 
 
 ### Video tutorial
