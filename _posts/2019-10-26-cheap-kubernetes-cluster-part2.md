@@ -93,7 +93,7 @@ POOL_NAME=<default-pool or paste here pool name>
 REGION_NAME=<paste here region name>
 
 #Clone KubeIP GIT repository
-git clone https://github.com/doitintl/kubeip
+git clone https://github.com/doitintl/kubeip.git
 
 #Create service account in GCP called "kubeIP"
 gcloud iam service-accounts create kubeip-service-account --display-name "kubeIP"

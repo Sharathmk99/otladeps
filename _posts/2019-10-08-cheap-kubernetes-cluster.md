@@ -6,7 +6,7 @@ categories: [ kubernetes, gcp ]
 tags: [kubernetes, gcp]
 image: assets/images/11.jpg
 description: "How to create Cheap Kubernetes Cluster with GCP for Learning/Hobbie."
-featured: true
+featured: false
 hidden: false
 comments: false
 toc: true
