@@ -4,7 +4,7 @@ title: "OtlaDeps"
 description: "Tech Blog"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo_fav.png'
-baseurl: ''
+baseurl: '/otladeps'
 google_analytics: 'UA-147148711-1'
 disqus: 'OtlaDeps'
 include: ["_pages"]
