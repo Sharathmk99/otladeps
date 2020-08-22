@@ -10,7 +10,7 @@ source "https://rubygems.org"
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do
-	gem "github-pages", "~> VERSION", group: :jekyll_plugins
+	
 	gem "kramdown", ">= 2.3.0"
     gem 'jekyll-feed'
     gem 'jekyll-sitemap'
@@ -18,4 +18,5 @@ group :jekyll_plugins do
     gem 'jekyll-seo-tag'
     gem 'jekyll-archives'
     gem 'rouge'
+	gem 'jekyll-sitemap'
 end
